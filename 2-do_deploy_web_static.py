@@ -4,41 +4,26 @@ from fabric.api import *
 import os.path
 
 env.user = 'ubuntu'
-env.hosts = ["104.196.155.240", "34.74.146.120"]
+env.hosts = ["10.0.2.15", "172.17.0.1"]
 env.key_filename = "~/id_rsa"
 
+
 def do_deploy(archive_path):
+    """distributes an archive to your web servers
     """
-    Distributes an archive to web servers
-    """
-    if not os.path.exists(archive_path):
+    if os.path.exists(archive_path) is False:
         return False
-
     try:
-        # Upload the archive to /tmp/ directory of the web server
+        arc = archive_path.split("/")
+        base = arc[1].strip('.tgz')
         put(archive_path, '/tmp/')
-
-        # Extract archive to /data/web_static/releases/<archive filename without extension>
-        filename = archive_path.split("/")[-1]
-        foldername = "/data/web_static/releases/{}".format(filename.split(".")[0])
-        run("mkdir -p {}".format(foldername))
-        run("tar -xzf /tmp/{} -C {}".format(filename, foldername))
-
-        # Remove the uploaded archive from the web server
-        run("rm /tmp/{}".format(filename))
-
-        # Move files from extracted folder to proper locations
-        run("mv {}/web_static/* {}".format(foldername, foldername))
-        run("rm -rf {}/web_static".format(foldername))
-
-        # Remove the existing symbolic link
-        run("rm -rf /data/web_static/current")
-
-        # Create a new symbolic link to the new version of the code
-        run("ln -s {} /data/web_static/current".format(foldername))
-
-        print("New version deployed!")
+        run('mkdir -p /data/web_static/releases/{}'.format(base))
+        main = "/data/web_static/releases/{}".format(base)
+        run('tar -xzf /tmp/{} -C {}/'.format(arc[1], main))
+        run('rm /tmp/{}'.format(arc[1]))
+        run('mv {}/web_static/* {}/'.format(main, main))
+        run('rm -rf /data/web_static/current')
+        run('ln -s {}/ "/data/web_static/current"'.format(main))
         return True
-
-    except Exception as e:
+    except:
         return False
