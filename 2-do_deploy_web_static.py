@@ -4,8 +4,20 @@ from fabric.api import *
 import os.path
 
 env.user = 'ubuntu'
-env.hosts = ["10.0.2.15", "172.17.0.1"]
+env.hosts = ["102.89.47.178", "102.89.46.8"]
 env.key_filename = "~/id_rsa"
+
+def do_pack():
+    """
+    Creates a compressed archive of web_static folder
+    """
+    try:
+        local("mkdir -p versions")
+        name = "web_static_" + datetime.now().strftime("%Y%m%d%H%M%S") + ".tgz"
+        local("tar -cvzf versions/{} web_static".format(name))
+        return "versions/{}".format(name)
+    except Exception as e:
+        return None
 
 
 def do_deploy(archive_path):
