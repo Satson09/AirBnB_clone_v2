@@ -189,99 +189,102 @@ Before starting, please fork the repository AirBnB_clone_v2 from your partner if
 - At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
 ## General
-What is Fabric
-How to deploy code to a server easily
-What is a tgz archive
-How to execute Fabric command locally
-How to execute Fabric command remotely
-How to transfer files with Fabric
-How to manage Nginx configuration
-What is the difference between root and alias in a Nginx configuration
-Copyright - Plagiarism
-You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
-You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
-You are not allowed to publish any content of this project.
-Any form of plagiarism is strictly forbidden and will result in removal from the program.
+- What is Fabric
+- How to deploy code to a server easily
+- What is a tgz archive
+- How to execute Fabric command locally
+- How to execute Fabric command remotely
+- How to transfer files with Fabric
+- How to manage Nginx configuration
+- What is the difference between root and alias in a Nginx configuration
+# Copyright - Plagiarism
+- You are tasked to come up with solutions for the tasks below yourself to meet with the above learning objectives.
+- You will not be able to meet the objectives of this or any following project by copying and pasting someone else’s work.
+- You are not allowed to publish any content of this project.
+- Any form of plagiarism is strictly forbidden and will result in removal from the program.
 
 ## Requirements
-Python Scripts
-Allowed editors: vi, vim, emacs
-All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.4.0)
-All your files should end with a new line
-The first line of all your files should be exactly #!/usr/bin/python3
-A README.md file at the root of the folder of the project is mandatory
-Your code should use the PEP 8 style (version 1.7.*)
-Your Fabric file must work with Fabric 3 version 1.14.post1 (installation instruction below)
-All your files must be executable
-The length of your files will be tested using wc
-All your functions (inside and outside a class) should have documentation (python3 -c 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
-A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
+- Python Scripts
+- Allowed editors: vi, vim, emacs
+- All your files will be interpreted/compiled on Ubuntu 20.04 LTS using python3 (version 3.4.0)
+- All your files should end with a new line
+- The first line of all your files should be exactly #!/usr/bin/python3
+- A README.md file at the root of the folder of the project is mandatory
+- Your code should use the PEP 8 style (version 1.7.*)
+- Your Fabric file must work with Fabric 3 version 1.14.post1 (installation instruction below)
+- All your files must be executable
+- The length of your files will be tested using wc
+- All your functions (inside and outside a class) should have documentation (python3 -c '- - 'print(__import__("my_module").my_function.__doc__)' and python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)')
+- A documentation is not a simple word, it’s a real sentence explaining what’s the purpose of the module, class or method (the length of it will be verified)
 
 ## Bash Scripts
-Allowed editors: vi, vim, emacs
-All your files will be interpreted on Ubuntu 20.04 LTS
-All your files should end with a new line
-A README.md file at the root of the folder of the project is mandatory
-All your Bash script files must be executable
-Your Bash script must pass Shellcheck (version 0.3.3-1~ubuntu20.04.1 via apt-get) without any errors
-The first line of all your Bash scripts should be exactly #!/usr/bin/env bash
-The second line of all your Bash scripts should be a comment explaining what is the script doing
-More Info
-# Install Fabric for Python 3 - version 1.14.post1
-$ pip3 uninstall Fabric
-$ sudo apt-get install libffi-dev
-$ sudo apt-get install libssl-dev
-$ sudo apt-get install build-essential
-$ sudo apt-get install python3.4-dev
-$ sudo apt-get install libpython3-dev
-$ pip3 install pyparsing
-$ pip3 install appdirs
-$ pip3 install setuptools==40.1.0
-$ pip3 install cryptography==2.8
-$ pip3 install bcrypt==3.1.7
-$ pip3 install PyNaCl==1.3.0
-$ pip3 install Fabric3==1.14.post1
-Video library(1 total)
-Search by title
-Deploy static files with Fabric
-Quiz questions
-Great! You've completed the quiz successfully! Keep going! (Show quiz)
-Tasks
-0. Prepare your web servers
-mandatory
-Score: 0.0% (Checks completed: 0.0%)
-Write a Bash script that sets up your web servers for the deployment of web_static. It must:
+- Allowed editors: vi, vim, emacs
+- All your files will be interpreted on Ubuntu 20.04 LTS
+- All your files should end with a new line
+- A README.md file at the root of the folder of the project is mandatory
+- All your Bash script files must be executable
+- Your Bash script must pass Shellcheck (version 0.3.3-1~ubuntu20.04.1 via apt-get) without any errors
+- The first line of all your Bash scripts should be exactly #!/usr/bin/env bash
+- The second line of all your Bash scripts should be a comment explaining what is the script doing
 
-Install Nginx if it not already installed
-Create the folder /data/ if it doesn’t already exist
-Create the folder /data/web_static/ if it doesn’t already exist
-Create the folder /data/web_static/releases/ if it doesn’t already exist
-Create the folder /data/web_static/shared/ if it doesn’t already exist
-Create the folder /data/web_static/releases/test/ if it doesn’t already exist
-Create a fake HTML file /data/web_static/releases/test/index.html (with simple content, to test your Nginx configuration)
-Create a symbolic link /data/web_static/current linked to the /data/web_static/releases/test/ folder. If the symbolic link already exists, it should be deleted and recreated every time the script is ran.
-Give ownership of the /data/ folder to the ubuntu user AND group (you can assume this user and group exist). This should be recursive; everything inside should be created/owned by this user/group.
-Update the Nginx configuration to serve the content of /data/web_static/current/ to hbnb_static (ex: https://mydomainname.tech/hbnb_static). Don’t forget to restart Nginx after updating the configuration:
-Use alias inside your Nginx configuration
-Tip
-Your program should always exit successfully. Don’t forget to run your script on both of your web servers.
+# More Info
+- Install Fabric for Python 3 - version 1.14.post1
+- $ pip3 uninstall Fabric
+- $ sudo apt-get install libffi-dev
+- $ sudo apt-get install libssl-dev
+- $ sudo apt-get install build-essential
+- $ sudo apt-get install python3.4-dev
+- $ sudo apt-get install libpython3-dev
+- $ pip3 install pyparsing
+- $ pip3 install appdirs
+- $ pip3 install setuptools==40.1.0
+- $ pip3 install cryptography==2.8
+- $ pip3 install bcrypt==3.1.7
+- $ pip3 install PyNaCl==1.3.0
+- $ pip3 install Fabric3==1.14.post1
+- Video library(1 total)
 
-In optional, you will redo this task but by using Puppet
+# Search by title
+- Deploy static files with Fabric
+- Quiz questions
+- Great! You've completed the quiz successfully! Keep going! (Show quiz)
 
-ubuntu@89-web-01:~/$ sudo ./0-setup_web_static.sh
-ubuntu@89-web-01:~/$ echo $?
-0
-ubuntu@89-web-01:~/$ ls -l /data
-total 4
-drwxr-xr-x 1 ubuntu ubuntu     4096 Mar  7 05:17 web_static
-ubuntu@89-web-01:~/$ ls -l /data/web_static
-total 8
-lrwxrwxrwx 1 ubuntu ubuntu   30 Mar 7 22:30 current -> /data/web_static/releases/test
-drwxr-xr-x 3 ubuntu ubuntu 4096 Mar 7 22:29 releases
-drwxr-xr-x 2 ubuntu ubuntu 4096 Mar 7 22:29 shared
-ubuntu@89-web-01:~/$ ls /data/web_static/current
-index.html
-ubuntu@89-web-01:~/$ cat /data/web_static/current/index.html
+#Tasks
+- 0. Prepare your web servers
+- mandatory
+- Score: 0.0% (Checks completed: 0.0%)
+- Write a Bash script that sets up your web servers for the deployment of web_static. It must:
+
+- Install Nginx if it not already installed
+- Create the folder /data/ if it doesn’t already exist
+- Create the folder /data/web_static/ if it doesn’t already exist
+- Create the folder /data/web_static/releases/ if it doesn’t already exist
+- Create the folder /data/web_static/shared/ if it doesn’t already exist
+- Create the folder /data/web_static/releases/test/ if it doesn’t already exist
+- Create a fake HTML file /data/web_static/releases/test/index.html (with simple content, to test your Nginx configuration)
+- Create a symbolic link /data/web_static/current linked to the /data/web_static/releases/test/ folder. If the symbolic link already exists, it should be deleted and recreated every time the script is ran.
+- Give ownership of the /data/ folder to the ubuntu user AND group (you can assume this user and group exist). This should be recursive; everything inside should be created/owned by this user/group.
+- Update the Nginx configuration to serve the content of /data/web_static/current/ to hbnb_static (ex: https://mydomainname.tech/hbnb_static). Don’t forget to restart Nginx after updating the configuration:
+- Use alias inside your Nginx configuration
+- Tip
+- Your program should always exit successfully. Don’t forget to run your script on both of your web servers.
+
+- In optional, you will redo this task but by using Puppet
+
+- ubuntu@89-web-01:~/$ sudo ./0-setup_web_static.sh
+- ubuntu@89-web-01:~/$ echo $?
+- 0
+- ubuntu@89-web-01:~/$ ls -l /data
+- total 4
+- drwxr-xr-x 1 ubuntu ubuntu     4096 Mar  7 05:17 web_static
+- ubuntu@89-web-01:~/$ ls -l /data/web_static
+- total 8
+- lrwxrwxrwx 1 ubuntu ubuntu   30 Mar 7 22:30 current -> /data/web_static/releases/test
+- drwxr-xr-x 3 ubuntu ubuntu 4096 Mar 7 22:29 releases
+- drwxr-xr-x 2 ubuntu ubuntu 4096 Mar 7 22:29 shared
+- ubuntu@89-web-01:~/$ ls /data/web_static/current
+- index.html
+- ubuntu@89-web-01:~/$ cat /data/web_static/current/index.html
 <html>
   <head>
   </head>
